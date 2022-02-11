@@ -47,7 +47,7 @@ router.post("/", (req, res) => {
   request(options)
     .then(function (response) {
       console.log(response);
-      res.status(200).json(response);
+      return res.status(200).json(response);
     })
     .catch(function (err) {
       console.log(err);

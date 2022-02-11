@@ -58,6 +58,8 @@ function PersonalityTest() {
     return Math.max.apply(null, temp);
   }
 
+ 
+
   function giveLabel(arr) {
     if (max(arr) == arr[0]) {
       return "Logician";
@@ -205,8 +207,9 @@ function PersonalityTest() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(data.facts);
+
     axios
-      .post("https://psychup-back.herokuapp.com/api/sentino", data)
+      .post("http://localhost:5000/api/sentino", data)
       .then((res) => {
         setArr(JSON.stringify(res.data.profile.inventories.big5));
 
